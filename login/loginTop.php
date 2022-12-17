@@ -34,7 +34,9 @@
             <div class="pilotAuth">
                 <h2>パイロットログイン</h2>
                 <button id="top-sign-btn">
-                    <p>ログイン</p>
+                    <a href="../login/pilot_login.php">
+                        <p>ログイン</p>
+                    </a>
                 </button>
                 <!-- <button id="top-login-btn">
                     <p>ログイン</p>
@@ -45,7 +47,9 @@
             <div class="generalAuth">
                 <h2>一般の方ログイン</h2>
                 <button id="top-sign-btn">
-                    <p>ログイン</p>
+                    <a href="../login/general_login.php">
+                        <p>ログイン</p>
+                    </a>
                 </button>
                 <!-- <button id="top-login-btn">
                     <p>ログイン</p>
