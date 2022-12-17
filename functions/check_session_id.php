@@ -1,7 +1,7 @@
 <?php
 
 // パイロット用ログイン状態のチェック関数
-function order_check_session_id()
+function pilot_check_session_id()
 {
     if (!isset($_SESSION["session_id"]) || $_SESSION["session_id"] != session_id()) {
         header('Location:./orderLogin/order_login.php');
@@ -14,7 +14,7 @@ function order_check_session_id()
 
 
 // 一般アカウントログイン状態のチェック関数
-function seller_check_session_id()
+function general_check_session_id()
 {
     if (!isset($_SESSION["session_id"]) || $_SESSION["session_id"] != session_id()) {
         header('Location:./sellerLogin/seller_login.php');

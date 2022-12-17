@@ -18,9 +18,9 @@
         </a>
         <nav id="header-nav">
             <ul id="header-items">
-                <li><a href="">お知らせ</a></li>
-                <li><a href="">ログイン</a></li>
-                <li><a href="">会員登録</a></li>
+                <li><a href="./notification.php">お知らせ</a></li>
+                <li><a href="./login/loginTop.php">ログイン</a></li>
+                <li><a href="./signUp/signupTop.php">会員登録</a></li>
             </ul>
             <ul id="sns-items">
                 <li><a href="#">I</a></li>
