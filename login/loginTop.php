@@ -12,7 +12,7 @@
 <body>
 
     <header>
-        <a id="product-title" href="./index.php">
+        <a id="product-title" href="../index.php">
             <h1>AIR BASE</h1>
         </a>
         <nav id="header-nav">
