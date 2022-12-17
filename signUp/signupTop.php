@@ -10,13 +10,13 @@
 
 <body>
     <header>
-        <a href="./index.php">
+        <a href="../index.php">
             <h1 id="product-title">AIR BASE</h1>
         </a>
         <nav id="header-nav">
             <ul id="header-items">
                 <li><a href="../notification.php">お知らせ</a></li>
-                <li><a href="../login/login.php">ログイン</a></li>
+                <li><a href="../login/loginTop.php">ログイン</a></li>
                 <li><a href="../signUp/signupTop.php">会員登録</a></li>
             </ul>
             <ul id="sns-items">
@@ -34,7 +34,9 @@
             <div class="pilotAuth">
                 <h2>パイロット登録</h2>
                 <button id="top-sign-btn">
-                    <p>新規登録</p>
+                    <a href="./pilotSignupInput.php">
+                        <p>新規登録</p>
+                    </a>
                 </button>
                 <!-- <button id="top-login-btn">
                     <p>ログイン</p>
