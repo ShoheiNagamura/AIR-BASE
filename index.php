@@ -95,12 +95,137 @@
             </ul>
         </section>
 
-        <!-- 案件一覧を10件ほど表示 -->
-        <h2>function</h2>
-        <!-- もっと見るを押すとログイン画面に遷移 -->
 
-        <!-- パイロットリストを１０件ほど表示 -->
-        <h2>パイロットリスト</h2>
+
+        <!-- 案件一覧を10件ほど表示 ------------------------------------- -->
+        <section id="top-job-list">
+            <h2>Project list</h2>
+            <p class="top-job-sub-title">一部案件例</p>
+            <ul class="top-job-list-items">
+                <div class="top-job-list-item">
+                    <table>
+                        <p class="top-job-status">募集中</p>
+                        <tr class="top-job-title">
+                            <th>案件</th>
+                            <td>福岡市上空の撮影</td>
+                        </tr>
+                        <tr class="top-job-place">
+                            <th>場所</th>
+                            <td>福岡県福岡市</td>
+                        </tr>
+                        <tr class="top-job-reward">
+                            <th>報酬金額</th>
+                            <td>50,000円</td>
+                        </tr>
+                        <tr class="top-job-date">
+                            <th>応募期限</th>
+                            <td>2022年12月06日〜2022年12月06日</td>
+                        </tr>
+                        <tr>
+                            <th>募集締切日</th>
+                            <td>2023年3月15日</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="top-job-list-item">
+                    <table>
+                        <p class="top-job-status">募集中</p>
+                        <tr class="top-job-title">
+                            <th>案件</th>
+                            <td>屋根の点検</td>
+                        </tr>
+                        <tr class="top-job-place">
+                            <th>場所</th>
+                            <td>宮崎県宮崎市</td>
+                        </tr>
+                        <tr class="top-job-reward">
+                            <th>報酬金額</th>
+                            <td>12,000円</td>
+                        </tr>
+                        <tr class="top-job-date">
+                            <th>応募期限</th>
+                            <td>2022年12月06日〜2022年12月06日</td>
+                        </tr>
+                        <tr>
+                            <th>募集締切日</th>
+                            <td>2023年3月15日</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="top-job-list-item">
+                    <table>
+                        <p class="top-job-status">募集中</p>
+                        <tr class="top-job-title">
+                            <th>案件</th>
+                            <td>制作会社案件への撮影同行</td>
+                        </tr>
+                        <tr class="top-job-place">
+                            <th>場所</th>
+                            <td>長崎県長崎市</td>
+                        </tr>
+                        <tr class="top-job-reward">
+                            <th>報酬金額</th>
+                            <td>82,000円</td>
+                        </tr>
+                        <tr class="top-job-date">
+                            <th>応募期限</th>
+                            <td>2022年12月06日〜2022年12月06日</td>
+                        </tr>
+                        <tr>
+                            <th>募集締切日</th>
+                            <td> 2023年3月15日</td>
+                        </tr>
+                    </table>
+                </div>
+            </ul>
+
+            <a href="./login/loginTop.php">もっと見る</a>
+
+        </section>
+
+        <!-- パイロットリストを１０件ほど表示 ----------------------------------------------------------->
+        <section id="top-pilot-list">
+            <h2>PILOT LIST</h2>
+            <p class="top-pilot-sub-title">パイロットリスト</p>
+            <ul class="top-pilot-items">
+                <li class="top-pilot-item">
+                    <img class="top-pilot-image" src="./image/shohei.png" alt="">
+                    <p class="top-pilot-kana">Nagamura Shohei</p>
+                    <p class="top-pilot-name">永村 奨平</p>
+                    <p class="top-pilot-text">空撮が得意です</p>
+                </li>
+                <li class="top-pilot-item">
+                    <img class="top-pilot-image" src="./image/oni.png" alt="">
+                    <p class="top-pilot-kana">Onizuka Ryohei</p>
+                    <p class="top-pilot-name">鬼さん</p>
+                    <p class="top-pilot-text">空撮が得意です</p>
+                </li>
+                <li class="top-pilot-item">
+                    <img class="top-pilot-image" src="./image/hunayama.png" alt="">
+                    <p class="top-pilot-kana">Funayama Teppei</p>
+                    <p class="top-pilot-name">船山 哲平</p>
+                    <p class="top-pilot-text">空撮が得意です</p>
+                </li>
+                <li class="top-pilot-item">
+                    <img class="top-pilot-image" src="./image/uekari.png" alt="">
+                    <p class="top-pilot-kana">Uekariya Haruka</p>
+                    <p class="top-pilot-name">上仮屋</p>
+                    <p class="top-pilot-text">空撮が得意です</p>
+                </li>
+                <li class="top-pilot-item">
+                    <img class="top-pilot-image" src="./image/hirae.png" alt="">
+                    <p class="top-pilot-kana">Hirae mizuki</p>
+                    <p class="top-pilot-name">平江 瑞樹</p>
+                    <p class="top-pilot-text">空撮が得意です</p>
+                </li>
+            </ul>
+
+            <a href="./login/loginTop.php">もっと見る</a>
+
+
+        </section>
         <!-- もっと見るを押すとログイン画面に遷移 -->
 
         <!-- 利用の流れを解説ーーーーーーーーーーーー -->
