@@ -1,10 +1,10 @@
 <?php
 
 // パイロット用ログイン状態のチェック関数
-function pilot_check_session_id()
+function check_session_id()
 {
     if (!isset($_SESSION["session_id"]) || $_SESSION["session_id"] != session_id()) {
-        header('Location:./orderLogin/order_login.php');
+        header('Location:../login/loginTop.php');
         exit();
     } else {
         session_regenerate_id(true);
