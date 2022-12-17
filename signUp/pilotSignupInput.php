@@ -39,6 +39,7 @@
             <input type="password" id="password" name="password" placeholder="パスワードを入力してください">
             <label for="password">確認パスワード</label>
             <input type="password" id="conf-password" name="conf-password" placeholder="確認パスワードを入力してください">
+            <input type="hidden" name="user_type" value="1">
             <button>登録</button>
         </form>
     </main>
