@@ -8,14 +8,14 @@ a {
     color: inherit;
 }
 
-/* ヘッダー　ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* ヘッダー ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 
 header {
     display: flex;
     /* justify-content: center; */
     align-items: center;
     background-color: #2C2F71;
-    color: azure;
+    color: #FFFFFF;
 }
 
 #product-title {
@@ -47,4 +47,112 @@ header {
 
 .sns-item {
     margin-left: 14px;
+}
+
+
+/* トップページメインーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+/* プロダクト紹介ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+.main-image {
+    display: flex;
+    justify-content: center;
+}
+
+.product-introduction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #4E5155;
+    padding: 140px 0px;
+}
+
+.product-introduction h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.text1 {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.text2 {
+    font-size: 12.8px;
+    margin-bottom: 40px;
+}
+
+.product-introduction h4 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.product-signup-btn {
+    font-size: 16px;
+    background-color: #2C2F71;
+    border-color: #2C2F71;
+    color: #FFFFFF;
+    width: 300px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+/* 機能紹介ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+
+
+.function-introduction {
+    background-color: #F6F6F6;
+    color: rgb(75, 75, 75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 120px 0px;
+}
+
+.function-introduction h2 {
+    font-size: 30px;
+    /* margin-top: 120px; */
+}
+
+.function-sub-title {
+    font-size: 16px;
+    margin-bottom: 60px;
+}
+
+.function-items {
+    display: flex;
+}
+
+.function-item {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 18px;
+    margin: 0px 20px;
+}
+
+.func-image {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 30px;
+}
+
+.func-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.func-text {
+    text-align: center;
+    font-size: 14px;
 }
