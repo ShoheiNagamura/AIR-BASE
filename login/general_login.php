@@ -32,7 +32,7 @@
 
         <h1>一般の方ログイン</h1>
         <p>一般の方はこちらからご登録ください</p>
-        <form action="pilotUserCreate.php" method="POST">
+        <form action="./general_login_act.php" method="POST">
             <label for="email">メールアドレス</label>
             <input type="email" id="email" name="email" placeholder="メールアドレスを入力してください">
             <label for="password">パスワード</label>

@@ -32,7 +32,7 @@
 
         <h1>パイロットログイン</h1>
         <p>パイロットに方はこちらからご登録ください</p>
-        <form action="pilotUserCreate.php" method="POST">
+        <form action="./pilot_login_act.php" method="POST">
             <label for="email">メールアドレス</label>
             <input type="email" id="email" name="email" placeholder="メールアドレスを入力してください">
             <label for="password">パスワード</label>
