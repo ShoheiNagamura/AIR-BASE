@@ -34,7 +34,9 @@
             <div class="pilotAuth">
                 <h2>パイロット登録</h2>
                 <button id="top-sign-btn">
-                    <p>新規登録</p>
+                    <a href="./pilotSignupInput.php">
+                        <p>新規登録</p>
+                    </a>
                 </button>
                 <!-- <button id="top-login-btn">
                     <p>ログイン</p>
