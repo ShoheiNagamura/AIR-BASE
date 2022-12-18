@@ -42,16 +42,10 @@ include('./functions/connect_to_db.php');
         <a href="">
             <li>受注管理</li>
         </a>
-        <a href="">
+        <a href="./profile/profile.php">
             <li>プロフィール</li>
         </a>
     </ul>
-
-
-
-
-
-
 </body>
 
 </html>

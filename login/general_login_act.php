@@ -51,7 +51,7 @@ if (password_verify($_POST['password'], $val['password']) && $val['user_type'] =
     $_SESSION['user_type'] = $val['user_type'];
     $_SESSION['created_at'] = $val['created_at'];
     $_SESSION['updated_at'] = $val['updated_at'];
-    header("Location:../index.php");
+    header("Location:../profile/profile.php");
 } else {
     echo "<p>ログイン情報に誤りがあります</p>";
     echo "<a href=../login/loginTop.php>ログイン</a>";
