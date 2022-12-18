@@ -62,7 +62,7 @@
 
 
         <section class="function-introduction">
-            <h2>function</h2>
+            <h2>FUNCTION</h2>
             <p class="function-sub-title">主な機能一覧</p>
             <ul class="function-items">
                 <li class="function-item">
@@ -99,7 +99,7 @@
 
         <!-- 案件一覧を10件ほど表示 ------------------------------------- -->
         <section id="top-job-list">
-            <h2>Project list</h2>
+            <h2>PROJECT LIST</h2>
             <p class="top-job-sub-title">一部案件例</p>
             <ul class="top-job-list-items">
                 <div class="top-job-list-item">
@@ -223,16 +223,135 @@
             </ul>
 
             <a href="./login/loginTop.php">もっと見る</a>
-
-
         </section>
-        <!-- もっと見るを押すとログイン画面に遷移 -->
 
         <!-- 利用の流れを解説ーーーーーーーーーーーー -->
+        <section id="top-flow-list">
+            <h2>FLOW</h2>
+            <p class="top-flow-sub-title">ご利用方法</p>
+            <div class="top-flow">
+                <div class="top-pilot-flow">
+                    <ul class="top-pilot-flow-items">
+                        <h3>パイロットの方</h3>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 1</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">新規登録 / ログイン</p>
+                                <p class="top-pilot-flow-text">まずは会員登録をお願いします。</p>
+                                <a class="top-pilot-flow-btn" href="./signUp/signupTop.php"><button>新規会員登録</button></a>
+                            </div>
+                        </li>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 2</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">パイロットスキルを登録</p>
+                                <p class="top-pilot-flow-text">活動する上で大事なパイロットスキルを<br>ご登録ください</p>
+                            </div>
+                        </li>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 3</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">案件を探す</p>
+                                <p class="top-pilot-flow-text">ご登録いただくことで案件の検索ことが<br>可能となります。</p>
+                            </div>
+                        </li>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 4</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">案件へ応募</p>
+                                <p class="top-pilot-flow-text">ご登録いただくことで案件への応募が<br>可能となります。</p>
+                            </div>
+                        </li>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 5</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">契約</p>
+                                <p class="top-pilot-flow-text">案件内容についてご依頼者様と<br>しっかりとしたヒアリングを<br>行った上でご契約ください</p>
+                            </div>
+                        </li>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 6</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">飛行を実施</p>
+                                <p class="top-pilot-flow-text">案件内容に応じて安全に飛行を<br>おこなってください</p>
+                            </div>
+                        </li>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 7</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">パイロットの評価</p>
+                                <p class="top-pilot-flow-text">依頼者様に評価をしていただきます。<br>評価いただくことにより<br>パイロットとしての信頼につながります。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ーーーーーーーーーーーーーーーーーーーーーー -->
+
+                <div class="top-general-flow">
+                    <ul class="top-pilot-flow-items">
+                        <h3>ご依頼者の方</h3>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 1</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">新規登録 / ログイン</p>
+                                <p class="top-pilot-flow-text">まずは会員登録をお願いします。</p>
+                                <a class="top-pilot-flow-btn" href="./signUp/signupTop.php"><button>新規会員登録</button></a>
+                            </div>
+                        </li>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 2</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">プロフィール情報を登録</p>
+                                <p class="top-pilot-flow-text">プロフィール情報を<br>ご登録ください</p>
+                            </div>
+                        </li>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 3</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">案件を登録・パイロットを検索</p>
+                                <p class="top-pilot-flow-text">案件登録、パイロットを検索し、<br>パイロットをお探しください</p>
+                            </div>
+                        </li>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 4</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">パイロットからの応募又はご依頼</p>
+                                <p class="top-pilot-flow-text">登録された案件への依頼、パイロットへ直接の<br>ご依頼も可能となります</p>
+                            </div>
+                        </li>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 5</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">契約</p>
+                                <p class="top-pilot-flow-text">パイロットと案件内容のしっかりとした<br>すり合わせをおこなった上で<br>ご契約ください</p>
+                            </div>
+                        </li>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 6</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">飛行を実施</p>
+                                <p class="top-pilot-flow-text">実施日にパイロットが飛行を実施</p>
+                            </div>
+                        </li>
+                        <li class="top-pilot-flow-item">
+                            <p class="top-pilot-step-num">STEP 7</p>
+                            <div class="top-pilot-flow-detal">
+                                <p class="top-pilot-flow-title">パイロットの評価</p>
+                                <p class="top-pilot-flow-text">パイロット評価をしていただきます。<br>評価いただくことにより<br>パイロットの技術向上につながります。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
     </main>
 
 
+    <footer>
+        <small>© 2022 shohei nagamura.</small>
+    </footer>
 </body>
 
 </html>
