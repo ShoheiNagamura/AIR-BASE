@@ -169,13 +169,15 @@ header {
     padding: 120px 0px;
 }
 
-.top-job-list h2 {
+#top-job-list h2 {
     font-size: 30px;
+    color: #4E5155;
 }
 
 .top-job-sub-title {
     font-size: 16px;
     margin-bottom: 60px;
+    color: #4E5155;
 }
 
 .top-job-list-items {
@@ -228,6 +230,12 @@ td {
     padding: 120px 0px;
 }
 
+#top-pilot-list h2 {
+    font-size: 30px;
+}
+
+
+
 .top-pilot-sub-title {
     margin-bottom: 60px;
 }
@@ -262,4 +270,109 @@ td {
 
 .top-pilot-text {
     margin-top: 18px;
+}
+
+/* ご利用の流れーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+#top-flow-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #F6F6F6;
+    padding: 140px 0px;
+}
+
+#top-flow-list h2 {
+    color: #4E5155;
+    font-size: 30px;
+}
+
+.top-flow-sub-title {
+    color: #4E5155;
+    margin-bottom: 60px;
+}
+
+.top-flow {
+    display: flex;
+    justify-content: space-evenly;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.top-pilot-flow {
+    display: flex;
+}
+
+.top-pilot-flow-items {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background-color: #d2e3f4;
+    margin: 50px;
+    padding: 8px 80px;
+    padding-bottom: 40px;
+    border-radius: 20px;
+}
+
+.top-pilot-flow-items h3 {
+    margin: 20px;
+    font-size: 32px;
+    color: #4E5155;
+}
+
+.top-pilot-flow-item {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    list-style: none;
+
+}
+
+.top-pilot-step-num {
+    background-color: #2C2F71;
+    color: #FFFFFF;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 30px;
+    font-weight: bold;
+}
+
+.top-pilot-flow-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2C2F71;
+    margin-bottom: 10px;
+}
+
+.top-pilot-flow-text {
+    font-size: 14px;
+    color: #4E5155;
+}
+
+.top-pilot-flow-btn button {
+    font-size: 20px;
+    background-color: #2C2F71;
+    border: #2C2F71;
+    color: #FFFFFF;
+    border-radius: 6px;
+    padding: 2px 10px;
+    margin-top: 10px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+
+/* フッター ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+footer {
+    background-color: #2C2F71;
+    color: #d2e3f4;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
