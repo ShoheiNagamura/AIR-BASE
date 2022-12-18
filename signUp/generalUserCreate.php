@@ -40,5 +40,5 @@ try {
 }
 
 //画面遷移
-header('Location:../index.php');
+header('Location:../login/general_login.php');
 exit();
