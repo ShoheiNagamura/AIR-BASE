@@ -25,13 +25,6 @@ if (
     exit('ParamError');
 }
 
-
-// var_dump($_POST['name']);
-// var_dump($_POST['nickname']);
-// var_dump($_POST['age']);
-// var_dump($_POST['gender']);
-// exit();
-
 $name = $_POST['name'];
 $nickname = $_POST['nickname'];
 $age = $_POST['age'];

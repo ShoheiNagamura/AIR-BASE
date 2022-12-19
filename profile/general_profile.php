@@ -98,7 +98,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <a href=''>
                 <li>案件管理</li>
             </a>
-            <a href='profile.php'>
+            <a href='general_profile.php'>
                 <li>プロフィール</li>
             </a>
         </ul>
@@ -130,7 +130,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
     <p><?= $result['age'] ?></p>
     <p><?= $result['gender'] ?></p>
 
-    <a href="../Update/userEdit.php">
+    <a href="../Update/general_userEdit.php">
         <p>プロフィール更新</p>
     </a>
 
