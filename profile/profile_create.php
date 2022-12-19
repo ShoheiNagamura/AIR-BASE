@@ -13,10 +13,6 @@ if ($_SESSION['user_type'] == 1) {
 }
 
 
-// var_dump($_POST['age']);
-// var_dump($_FILES['my_image']);
-// exit();
-
 $id = $_SESSION['id'];
 
 if (
