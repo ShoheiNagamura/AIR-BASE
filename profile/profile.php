@@ -14,7 +14,9 @@ if ($_SESSION['user_type'] == 1) {
 
 $id = $_SESSION['id'];
 
-// var_dump($_SESSION['name']);
+// echo '<pre>';
+// var_dump($result);
+// echo '</pre>';
 // exit();
 
 // //値があったら
@@ -41,12 +43,11 @@ try {
 
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-
-
 // echo '<pre>';
 // var_dump($result);
-// echo '</pre>';
-// exit();
+// echo '</pre>'
+
+$json_result = json_encode(($result));
 
 
 ?>
@@ -94,6 +95,10 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <p>パイロットプロフィール</p>
 
+    <canvas id="myChart"></canvas>
+
+
+
     <img src='{$result["my_image"]}' height='150px'>
     <p><?= $result['kana'] ?></p>
     <p><?= $result['name'] ?></p>
@@ -104,6 +109,54 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
     <p><?= $result['status'] ?></p>
     <p><?= $result['achievement'] ?></p>
     <p><?= $result['pr'] ?></p>
+
+    <a href="../Update/userEdit.php">
+        <p>プロフィール更新</p>
+    </a>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <script>
+        let obj_data = JSON.parse('<?= $json_result ?>');
+        console.log(obj_data);
+
+
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ["空撮", "農薬散布", "測量・点検", "外壁調査", "災害", "レース", "マイクロドローン", "水中"],
+                datasets: [{
+                    label: "技術スキル",
+                    data: [obj_data['shooting'], obj_data['agrochemical_spraying'], obj_data['measurement'], obj_data['outer_wall_survey'], obj_data['disaster'], obj_data['race'], obj_data['micro_drone'], obj_data['water']],
+                    backgroundColor: "rgba(67, 133, 215, 0.5)",
+                    borderColor: "rgb(0,0,128)",
+                    pointBorderColor: "rgb(0,0,128)",
+                    pointBackgroundColor: "rgb(0,0,128)",
+                    pointRadius: 5,
+                    pointHoverRadius: 15,
+                    borderWidth: "50px"
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        max: 5, //グラフの最大値
+                        min: 0, //グラフの最小値
+                        ticks: {
+                            stepSize: 1 //目盛間隔
+                        },
+                        pointLabels: {
+                            color: "rgb(0,0,128)",
+                            fontSize: 16, // 文字の大きさ
+                            fontColor: "green" // 文字の色
+                        }
+                    }
+                },
+            }
+        });
+    </script>
+
 </body>
 
 </html>
