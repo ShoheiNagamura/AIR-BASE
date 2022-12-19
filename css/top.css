@@ -14,6 +14,14 @@ header {
     color: #FFFF;
 }
 
+.header-nav {
+    display: flex;
+}
+
+.header-nav a {
+    margin-left: 20px;
+}
+
 ul {
     display: flex;
     justify-content: space-around;

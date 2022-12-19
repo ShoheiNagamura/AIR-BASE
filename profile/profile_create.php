@@ -64,6 +64,9 @@ $race = $_POST['race'];
 $micro_drone = $_POST['micro_drone'];
 $water = $_POST['water'];
 
+
+
+
 $_SESSION['name'] = $name;
 
 
