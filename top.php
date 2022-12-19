@@ -4,69 +4,71 @@ session_start();
 include('./functions/check_session_id.php');
 include('./functions/connect_to_db.php');
 
+$email = $_SESSION['email'];
+// var_dump($email);
+// exit();
+
 if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
-    $headerOutput = '
+    $headerOutput = "
         <header>
             <p> LOGO</p>
             <h1>AIR BASE</h1>
-            <div class="header-nav">
-                <!-- <a href="#"><img src="" alt=""></a> -->
-                <p>ユーザー</p>
-                <a href="./logout/logout.php">
+            <div class='header-nav'>
+                <p>{$email}</p>
+                <a href='./logout/logout.php'>
                     <p>ログアウト</p>
                 </a>
             </div>
         </header>
 
         <ul>
-            <a href="">
+            <a href=''>
                 <li>案件検索</li>
             </a>
-            <a href="">
+            <a href=''>
                 <li>パイロット検索</li>
             </a>
-            <a href="">
+            <a href=''>
                 <li>気に入った案件</li>
             </a>
-            <a href="">
+            <a href=''>
                 <li>受注管理</li>
             </a>
-            <a href="./profile/profile.php">
+            <a href='./profile/profile.php'>
                 <li>プロフィール</li>
             </a>
-        </ul>';
+        </ul>";
 } else if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 0) {
-    $headerOutput = '
+    $headerOutput = "
         <header>
             <p> LOGO</p>
             <h1>AIR BASE</h1>
-            <div class="header-nav">
-                <!-- <a href="#"><img src="" alt=""></a> -->
-                <p>ユーザー</p>
-                <a href="./logout/logout.php">
+            <div class='header-nav'>
+                <p>{$email}</p>
+                <a href='./logout/logout.php'>
                     <p>ログアウト</p>
                 </a>
             </div>
         </header>
 
         <ul>
-            <a href="">
+            <a href=''>
                 <li>案件検索</li>
             </a>
-            <a href="">
+            <a href=''>
                 <li>パイロット検索</li>
             </a>
-            <a href="">
+            <a href=''>
                 <li>気になるパイロット</li>
             </a>
-            <a href="">
+            <a href=''>
                 <li>案件管理</li>
             </a>
-            <a href="./profile/profile.php">
+            <a href='./profile/profile.php'>
                 <li>プロフィール</li>
             </a>
         </ul>
-        ';
+        ";
 }
 
 
