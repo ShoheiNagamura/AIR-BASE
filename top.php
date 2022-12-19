@@ -12,7 +12,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <div class="header-nav">
                 <!-- <a href="#"><img src="" alt=""></a> -->
                 <p>ユーザー</p>
-                <a href="./profile/profile.php">
+                <a href="./logout/logout.php">
                     <p>ログアウト</p>
                 </a>
             </div>
@@ -43,7 +43,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <div class="header-nav">
                 <!-- <a href="#"><img src="" alt=""></a> -->
                 <p>ユーザー</p>
-                <a href="./profile/profile.php">
+                <a href="./logout/logout.php">
                     <p>ログアウト</p>
                 </a>
             </div>
