@@ -35,9 +35,9 @@ if ($status == false) {
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// echo '<pre>';
-// var_dump($result[0]);
-// echo '</pre>';
+echo '<pre>';
+var_dump($result["user_id"]);
+echo '</pre>';
 
 
 // ヘッダー用
@@ -122,7 +122,7 @@ foreach ($result as $record) {
             <p class='pilot-item-kana'>{$record["kana"]}</p>
             <p class='pilot-item-name'>{$record["name"]}({$record["age"]})</p>
             <p class='pilot-item-word'>{$record["word"]}</p>
-            <a href = './pilot_detail.php'><button>詳しく</button>
+            <a href = './pilot_detail.php?id={$record["user_id"]}'><button>詳しく</button>
         </div>
     ";
 }
