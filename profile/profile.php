@@ -34,8 +34,14 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // var_dump($result['user_id']);
 // exit();
+// echo '<pre>';
+// var_dump($result['shooting']);
+// echo '</pre>';
+// exit();
 
 $json_result = json_encode(($result));
+// var_dump($json_result);
+// exit();
 
 
 // ヘッダー用
@@ -167,8 +173,8 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
     <script>
-        let obj_data = JSON.parse('<?= $json_result ?>');
-        console.log(obj_data);
+        let obj_data = <?= $json_result ?>;
+        // console.log(obj_data['shooting']);
 
 
         var ctx = document.getElementById("myChart");
