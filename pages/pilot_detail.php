@@ -124,7 +124,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
     <main class="pilot-profile-area">
         <div class="pilot-left">
             <div class="pilot-profile-sns">
-                <img src='<?= $result["my_image"] ?>' height='150px'>
+                <img class="y" src='<?= $result["my_image"] ?>' height='150px'>
                 <div class="profile-sns">
                     <p>snsアカウント</p>
                     <ul class="pilot-sns-img">
