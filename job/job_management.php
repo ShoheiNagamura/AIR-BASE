@@ -159,7 +159,7 @@ foreach ($result as $record) {
             </div>
             <p class='job-detail'>案件詳細<br>{$record["detail"]}</p>
             <div class='job-mana-btn'>
-                <a href=''><button>編集</button></a>
+                <a href='./job_edit.php?id={$record["id"]}'><button>編集</button></a>
                 <a href=''><button>削除</button></a>
             </div>
         </div>

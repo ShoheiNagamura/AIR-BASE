@@ -317,6 +317,19 @@ li {
     align-items: center;
 }
 
+.profile-img {
+    border-radius: 50px;
+}
+
+.profile-sns ul {
+    background-color: #E4EAF4;
+}
+
+.pilot-sns-img img {
+    width: 40px;
+    margin: 10px;
+}
+
 .x {
     font-size: 12px;
 }
@@ -357,4 +370,38 @@ li {
     background-color: rgb(237, 237, 59);
     border: solid 1px rgb(237, 237, 59);
     box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+
+
+/* 一般ユーザー編集画面ーーーーーーーーーーーーーーーーーーーーーー */
+.general_profile-area h4 {
+    margin-bottom: 5px;
+}
+
+.general_profile-area input {
+    width: 300px;
+    height: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.general_profile-area select {
+    width: 150px;
+    height: 32px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.general_profile-area button {
+    margin-top: 10px;
+}
+
+.profile-edit-return {
+    background-color: #2C2F71;
+    font-size: 18px;
+    color: #FFFFFF;
+    border: #2C2F71;
+    padding: 4px 20px;
 }

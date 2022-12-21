@@ -8,12 +8,7 @@ include('../functions/connect_to_db.php');
 include('../functions/check_session_id.php');
 
 
-if ($_SESSION['user_type'] == 1) {
-    check_session_id();
-} else {
-    header("Location:../login/loginTop.php");
-    exit();
-}
+
 
 $id = $_SESSION['id'];
 

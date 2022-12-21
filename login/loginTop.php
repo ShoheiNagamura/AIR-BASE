@@ -17,16 +17,16 @@
         </a>
         <nav id="header-nav">
             <ul id="header-items">
-                <li class="nav-item"><a href="../notification.php">お知らせ</a></li>
+                <!-- <li class="nav-item"><a href="../notification.php">お知らせ</a></li> -->
                 <li class="nav-item"><a href="../login/loginTop.php">ログイン</a></li>
                 <li class="nav-item"><a href="../signUp/signupTop.php">会員登録</a></li>
-                <li class="nav-item"><a href="">マイページ</a></li>
+                <!-- <li class="nav-item"><a href="">マイページ</a></li> -->
             </ul>
-            <ul id="sns-items">
+            <!-- <ul id="sns-items">
                 <li class="sns-item"><a href="#">I</a></li>
                 <li class="sns-item"><a href="#">F</a></li>
                 <li class="sns-item"><a href="#">T</a></li>
-            </ul>
+            </ul> -->
         </nav>
     </header>
 

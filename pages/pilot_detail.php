@@ -127,10 +127,10 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
                 <img src='<?= $result["my_image"] ?>' height='150px'>
                 <div class="profile-sns">
                     <p>snsアカウント</p>
-                    <ul>
-                        <li>インスタ</li>
-                        <li>facebook</li>
-                        <li>Twitter</li>
+                    <ul class="pilot-sns-img">
+                        <img src="../image/インスタグラムのシンプルなロゴのアイコン 2.png" alt="">
+                        <img src="../image/FACEBOOKのアイコン素材 3.png" alt="">
+                        <img src="../image/Twitterのアイコン素材 2.png" alt="">
                     </ul>
                 </div>
             </div>
