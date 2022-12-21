@@ -5,7 +5,7 @@ session_start();
 include('../functions/check_session_id.php');
 include('../functions/connect_to_db.php');
 
-if ($_SESSION['user_type'] == 1) {
+if ($_SESSION['user_type'] == 0) {
     check_session_id();
 } else {
     header("Location:../login/loginTop.php");
