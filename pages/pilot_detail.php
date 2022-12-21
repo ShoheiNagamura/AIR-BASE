@@ -141,8 +141,8 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <div style="position:relative;width:400px;height:400px;">
                 <canvas id="myChart"></canvas>
             </div>
-            <a href="../Update/userEdit.php">
-                <button class="pilot-profile-edit-btn">プロフィール更新</button>
+            <a href="./pilot_list.php">
+                <button class="return">戻る</button>
             </a>
         </div>
 

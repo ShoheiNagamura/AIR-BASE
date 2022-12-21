@@ -115,10 +115,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
 
     <?= $headerOutput ?>
 
-
-    <p>案件登録</p>
-
-    <main>
+    <main id="job-inInput-area">
         <h2 class="jobTitle">案件ご登録</h2>
         <form class="jobCreate" action="./job_create.php" method="POST">
             <div class="jobNameArea jobInputAreaItem">
@@ -166,7 +163,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             </div>
             <button class="jobInputArea-btn">登録</button>
         </form>
-        <a href="./index.php"><button class="return">戻る</button></a>
+        <a class="jonInput-btn" href="./index.php"><button class="return">戻る</button></a>
     </main>
 
 

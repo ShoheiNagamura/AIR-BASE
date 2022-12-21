@@ -125,18 +125,26 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
 
     <?= $headerOutput ?>
 
+    <div class="general_profile-area">
+        <h2 class="profile-title">一般ユーザープロフィール</h2>
+        <h4>お名前</h4>
+        <p><?= $result['name'] ?></p>
+        <h4>ニックネーム</h4>
+        <p><?= $result['nickname'] ?></p>
+        <h4>ご年齢</h4>
+        <p><?= $result['age'] ?></p>
+        <h4>性別</h4>
+        <p><?= $result['gender'] ?></p>
 
-    <p>一般ユーザープロフィール</p>
-
-    <p><?= $result['name'] ?></p>
-    <p><?= $result['nickname'] ?></p>
-    <p><?= $result['age'] ?></p>
-    <p><?= $result['gender'] ?></p>
-
-    <a href="../Update/general_userEdit.php">
-        <p>プロフィール更新</p>
-    </a>
+        <a href="../Update/general_userEdit.php">
+            <button class="profile-edit-btn">プロフィール更新</button>
+        </a>
+    </div>
 
 </body>
 
 </html>
+
+
+
+<a href='./sellerDetail.php'><button>応募</button>
