@@ -29,18 +29,19 @@
         </nav>
     </header>
 
-    <main>
-        <p><a href="../login/loginTop.php">戻る</a></p>
+    <main class="Auth-area">
 
-        <h1>一般の方ログイン</h1>
-        <p>一般の方はこちらからご登録ください</p>
-        <form action="./general_login_act.php" method="POST">
-            <label for="email">メールアドレス</label>
-            <input type="email" id="email" name="email" placeholder="メールアドレスを入力してください">
-            <label for="password">パスワード</label>
-            <input type="password" id="password" name="password" placeholder="パスワードを入力してください">
-            <button>ログイン</button>
+        <h1 class='Auth-title'>一般の方ログイン</h1>
+        <p class="Auth-title-detail">一般の方はこちらからご登録ください</p>
+        <form class="Auth-form" action="./general_login_act.php" method="POST">
+            <label class="Auth-email" for="email">メールアドレス</label>
+            <input class="Auth-email-input" type="email" id="email" name="email" placeholder="メールアドレスを入力してください">
+            <label class="Auth-pass" for="password">パスワード</label>
+            <input class="Auth-pass-input" type="password" id="password" name="password" placeholder="パスワードを入力してください">
+            <button class="Auth-btn">ログイン</button>
         </form>
+        <p><a class="auth-top-back" href="../login/loginTop.php">戻る</a></p>
+
     </main>
 
 </body>

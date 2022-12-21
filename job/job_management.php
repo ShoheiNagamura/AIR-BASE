@@ -10,7 +10,8 @@ include('../functions/connect_to_db.php');
 
 
 $email = $_SESSION['email'];
-// var_dump($email);
+$id = $_SESSION['id'];
+// var_dump($id);
 // exit();
 
 
@@ -18,11 +19,48 @@ $email = $_SESSION['email'];
 $pdo = connect_to_db();
 
 if ($_SESSION['user_type'] == 0) {
-    check_session_id();
+    general_check_session_id();
 } else {
     header("Location:../login/loginTop.php");
     exit();
 }
+
+//selectのSQLクエリ用意
+$sql = 'SELECT * FROM job_project where user_id =:user_id order by update_at DESC';
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':user_id', $id, PDO::PARAM_INT);
+
+
+//SQL実行するがまだデータの取得はできていない
+try {
+    $status = $stmt->execute();
+} catch (PDOException $e) {
+    echo json_encode(["sql error" => "{$e->getMessage()}"]);
+    exit();
+}
+
+//fectchAllでデータの取得
+if ($status == false) {
+    $error = $stmt->errorInfo();
+    exit('sqlError:' . $error[2]);
+} else {
+    // PHPではデータを取得するところまで実施
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+
+
+
+
+// 取得したデータ件数を用意
+$count = count($result);
+
+
+// ヘッダー用
+$headerOutput = "";
+
+$output = "";
 
 
 
@@ -95,9 +133,40 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
 
 
 
+//メイン
+foreach ($result as $record) {
+    $output .= "
+        <div class='job-item'>
+            <div class='job-header'>
+                <p class='job-name'>{$record["job_name"]}</p>
+                <div class='job-date'>
+                    <p class='job-created_at'>{$record["created_at"]}</p>
+                    <p class='job-update_at'>{$record["update_at"]}</p>
+                </div>
+            </div>
+            <p class='job-status'>{$record["job_status"]}</p>
+            <div class='job-box'>
+                <div class='place-reward'>
+                    <p class='job-place'>場所：{$record["place"]}</p>
+                    <p class='job-reward'>報酬：{$record["reward"]}</p>
+                    <p class='job-transportation_expenses'>交通費：{$record["transportation_expenses"]}</p>
+
+                </div>
+                <div class='word-date'>
+                    <p class='job-work-date'>期間：{$record["start_date"]} ~ {$record["end_date"]}</p>
+                    <p class='job-deadline'>締切日：{$record["deadline"]}</p>
+                </div>
+            </div>
+            <p class='job-detail'>案件詳細<br>{$record["detail"]}</p>
+            <div class='job-mana-btn'>
+                <a href=''><button>編集</button></a>
+                <a href=''><button>削除</button></a>
+            </div>
+        </div>
+    ";
+}
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -114,60 +183,13 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
 <body>
 
     <?= $headerOutput ?>
+    <h2 class="pilot-list-title">登録済みの案件一覧</h2>
+    <div class="job-items">
+        <p class="count-job"><?= $count ?> 件の検索結果</p>
+        <?= $output ?>
+    </div>
+    </div>
 
-
-    <p>案件登録</p>
-
-    <main>
-        <h2 class="jobTitle">案件ご登録</h2>
-        <form class="jobCreate" action="./job_create.php" method="POST">
-            <div class="jobNameArea jobInputAreaItem">
-                <label for="jobName">案件名（必須）</label>
-                <input type="text" id="jobName" name=" jobName" placeholder="案件名をご入力ください">
-            </div>
-            <div class="statusArea jobInputAreaItem">
-                <label for="job_status">募集状況（必須）</label>
-                <select name="job_status" id="job_status">
-                    <option value="募集中">募集中</option>
-                    <option value="急募">急募</option>
-                    <option value="募集終了">募集終了</option>
-                </select>
-            </div>
-            <div class="placeArea jobInputAreaItem">
-                <label for="place">場所（必須）</label>
-                <input type="text" id="place" name="place" placeholder="お仕事の場所をご入力ください">
-            </div>
-
-
-            <div class="deadlineArea jobInputAreaItem">
-                <label for="start_date">開始日</label>
-                <input type="date" id="start_date" name="start_date">
-            </div>
-            <div class="deadlineArea jobInputAreaItem">
-                <label for="end_date">終了日</label>
-                <input type="date" id="end_date" name="end_date">
-            </div>
-
-            <div class="rewardArea jobInputAreaItem">
-                <label for="reward">報酬</label>
-                <input type="text" id="reward" name="reward" placeholder="報酬金額を入力してださい">
-            </div>
-            <div class="TransportationCostsArea jobInputAreaItem">
-                <label for="transportation_expenses">交通費</label>
-                <input type="text" id="transportation_expenses" name="transportation_expenses" placeholder="交通費の金額をご入力ださい">
-            </div>
-            <div class="deadlineArea jobInputAreaItem">
-                <label for="deadline">募集期限</label>
-                <input type="date" id="deadline" name="deadline">
-            </div>
-            <div class="contentArea jobInputAreaItem">
-                <label for="detail">案件内容</label>
-                <textarea name="detail" id="detail" cols="70" rows="10" placeholder="案件の内容を詳しくご記載ください"></textarea>
-            </div>
-            <button class="jobInputArea-btn">登録</button>
-        </form>
-        <a href="./index.php"><button class="return">戻る</button></a>
-    </main>
 
 
 </body>

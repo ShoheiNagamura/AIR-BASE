@@ -29,21 +29,21 @@
         </nav>
     </header>
 
-    <main>
-        <p><a href="../signUp/signupTop.php">戻る</a></p>
-
-        <h1>一般の方新規登録</h1>
-        <p>一般の方はこちらからご登録ください</p>
-        <form action="pilotUserCreate.php" method="POST">
-            <label for="email">メールアドレス</label>
-            <input type="email" id="email" name="email" placeholder="メールアドレスを入力してください">
-            <label for="password">パスワード</label>
-            <input type="password" id="password" name="password" placeholder="パスワードを入力してください">
-            <label for="password">確認パスワード</label>
-            <input type="password" id="conf-password" name="conf-password" placeholder="確認パスワードを入力してください">
+    <main class="Auth-area">
+        <h1 class='Auth-title'>一般の方新規登録</h1>
+        <p class="Auth-title-detail">一般の方はこちらからご登録ください</p>
+        <form class="Auth-form" action="pilotUserCreate.php" method="POST">
+            <label class="Auth-label" for="email">メールアドレス</label>
+            <input class="Auth-input" type="email" id="email" name="email" placeholder="メールアドレスを入力してください">
+            <label class="Auth-label" for="password">パスワード</label>
+            <input class="Auth-input" type="password" id="password" name="password" placeholder="パスワードを入力してください">
+            <label class="Auth-label" for="password">確認パスワード</label>
+            <input class="Auth-input" type="password" id="conf-password" name="conf-password" placeholder="確認パスワードを入力してください">
             <input type="hidden" name="user_type" value="0">
-            <button>登録</button>
+            <button class="Auth-btn">登録</button>
         </form>
+        <p><a class="auth-top-back" href="../signUp/signupTop.php">戻る</a></p>
+
     </main>
 
 </body>
