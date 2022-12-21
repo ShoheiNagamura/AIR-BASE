@@ -317,6 +317,11 @@ li {
     align-items: center;
 }
 
+.y {
+    border-radius: 50%;
+    ;
+}
+
 .profile-img {
     border-radius: 50px;
 }
