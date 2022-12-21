@@ -118,7 +118,7 @@ foreach ($result as $record) {
             <p class='pilot-item-kana'>{$record["kana"]}</p>
             <p class='pilot-item-name'>{$record["name"]}({$record["age"]})</p>
             <p class='pilot-item-word'>{$record["word"]}</p>
-            <a href = './sellerDetail.php'><button>詳しく</button>
+            <a href = './pilot_detail.php'><button>詳しく</button>
         </div>
     ";
 }
