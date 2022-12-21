@@ -136,15 +136,11 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
         <h4>性別</h4>
         <p><?= $result['gender'] ?></p>
 
-        <a href="../Update/general_userEdit.php">
-            <button class="profile-edit-btn">プロフィール更新</button>
+        <a href="../Update/general_profile_edit.php">
+            <button class="profile-edit-btn">プロフィール編集</button>
         </a>
     </div>
 
 </body>
 
 </html>
-
-
-
-<a href='./sellerDetail.php'><button>応募</button>

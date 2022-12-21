@@ -1,24 +1,29 @@
 <?php
+
 session_start();
 
 include('../functions/check_session_id.php');
 include('../functions/connect_to_db.php');
 
+if ($_SESSION['user_type'] == 0) {
+    general_check_session_id();
+} else {
+    header("Location:../login/loginTop.php");
+    exit();
+}
+
+$id = $_SESSION['id'];
+
 $email = $_SESSION['email'];
-// var_dump($email);
-// exit();
 
 
-
-
-//関数定義ファイルからDB接続関数呼び出す
+// DB接続
 $pdo = connect_to_db();
-
-$sql = 'SELECT * FROM users INNER JOIN pailot_info ON users.id = pailot_info.user_id INNER JOIN pailot_skill ON pailot_info.user_id = pailot_skill.user_id ;';
+// $sql = 'SELECT * FROM pailot_info WHERE user_id=:id';
+$sql = 'SELECT * FROM users INNER JOIN general_info ON users.id = general_info.user_id  where users.id=:id ;';
 $stmt = $pdo->prepare($sql);
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
-
-//SQL実行するがまだデータの取得はできていない
 try {
     $status = $stmt->execute();
 } catch (PDOException $e) {
@@ -26,27 +31,17 @@ try {
     exit();
 }
 
-//fectchAllでデータの取得
-if ($status == false) {
-    $error = $stmt->errorInfo();
-    exit('sqlError:' . $error[2]);
-} else {
-    // PHPではデータを取得するところまで実施
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // echo '<pre>';
-// var_dump($result[0]);
+// var_dump($result);
 // echo '</pre>';
+// exit();
+
+$json_result = json_encode(($result));
 
 
 // ヘッダー用
-$headerOutput = "";
-
-// メイン用
-$output = "";
-
-
 if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
     $headerOutput = "
         <header>
@@ -61,10 +56,10 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
         </header>
 
         <ul>
-            <a href='./job_list.php'>
+            <a href='../pages/job_list.php'>
                 <li>案件検索</li>
             </a>
-            <a href='./pilot_list.php'>
+            <a href='../pages/pilot_list.php'>
                 <li>パイロット検索</li>
             </a>
             <a href=''>
@@ -73,7 +68,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <a href=''>
                 <li>受注管理</li>
             </a>
-            <a href='../profile/profile.php'>
+            <a href='profile.php'>
                 <li>プロフィール</li>
             </a>
         </ul>";
@@ -91,10 +86,10 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
         </header>
 
         <ul>
-            <a href='./job_list.php'>
+            <a href='../pages/job_list.php'>
                 <li>案件検索</li>
             </a>
-            <a href='./pilot_list.php'>
+            <a href='../pages/pilot_list.php'>
                 <li>パイロット検索</li>
             </a>
             <a href=''>
@@ -106,27 +101,12 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <a href='../job/jobInput.php'>
                 <li>案件登録</li>
             </a>
-            <a href='../profile/general_profile.php'>
+            <a href='./general_profile.php'>
                 <li>プロフィール</li>
             </a>
         </ul>
         ";
 }
-
-
-
-foreach ($result as $record) {
-    $output .= "
-        <div class='pilot-item'>
-            <img src='{$record["my_image"]}' height='300px'>
-            <p class='pilot-item-kana'>{$record["kana"]}</p>
-            <p class='pilot-item-name'>{$record["name"]}({$record["age"]})</p>
-            <p class='pilot-item-word'>{$record["word"]}</p>
-            <a href = './pilot_detail.php'><button>詳しく</button>
-        </div>
-    ";
-}
-
 
 ?>
 
@@ -144,12 +124,26 @@ foreach ($result as $record) {
 <body>
 
     <?= $headerOutput ?>
-    <main class="pilot-list">
-        <h2 class="pilot-list-title">パイロット一覧</h2>
-        <div class="pilot-items">
-            <?= $output ?>
-        </div>
-    </main>
+
+    <form action="../Update/general_userUpdate.php" method="POST" class="general_profile-area">
+        <h2 class="profile-title">一般ユーザープロフィール</h2>
+        <h4>お名前</h4>
+        <input type="text" id="name" name="name" placeholder="お名前を入力してください" value="<?= $result['name'] ?>">
+        <h4>ニックネーム</h4>
+        <input type="text" id="nickname" name="nickname" placeholder="ニックネームを入力してください" value="<?= $result['nickname'] ?>">
+        <h4>ご年齢</h4>
+        <input type="text" id="age" name="age" placeholder="ご年齢を入力してください" value="<?= $result['age'] ?>">
+        <h4>性別</h4>
+        <select name="gender" id="gender">
+            <option value="男">男性</option>
+            <option value="女">女性</option>
+        </select>
+        <button class="profile-edit-btn">保存</button>
+    </form>
+    <a href="../profile/general_profile.php" class="profile-edit-return">戻る</a>
+
+
+
 </body>
 
 </html>
