@@ -164,7 +164,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
     <script>
-        let obj_data = JSON.parse('<?= $json_result ?>');
+        let obj_data = <?= $json_result ?>;
         console.log(obj_data);
 
 
