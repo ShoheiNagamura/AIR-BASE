@@ -42,3 +42,163 @@ li {
 }
 
 /* ----------------------------------------- */
+
+/* パイロット一覧画面 */
+.pilot-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pilot-list-title {
+    font-size: 38px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    color: #2C2F71;
+}
+
+.pilot-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pilot-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #2C2F71;
+    padding: 20px 40px;
+    margin: 20px;
+    border: 3px solid #2C2F71;
+    border-radius: 20px;
+}
+
+.pilot-item img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+}
+
+.pilot-item-kana {
+    font-size: 18px;
+    margin-top: 18px;
+}
+
+.pilot-item-name {
+    font-size: 22px;
+}
+
+.pilot-item-word {
+    font-size: 16px;
+    margin-bottom: 40px;
+    background-color: gainsboro;
+    border-radius: 3px;
+    width: 80%;
+    margin-top: 20px;
+    padding: 6px;
+}
+
+
+/* 案件一覧ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.job-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.job-list {}
+
+.job-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* width: 50%; */
+    background-color: #F0F0F0;
+    padding-top: 30px;
+}
+
+.count-job {
+    font-size: 24px;
+}
+
+.job-item {
+    margin: 20px;
+    width: 46%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid gray;
+    padding: 40px;
+    background-color: #F5F5F5;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.job-header {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.job-date {
+    font-size: 14px;
+    color: #4E5155;
+}
+
+.job-status {
+    display: flex;
+    justify-content: center;
+    background-color: yellow;
+    width: 100px;
+    margin: 20px;
+}
+
+.job-box {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 80px;
+    margin-bottom: 20px;
+}
+
+.place-reward {}
+
+.transportation_expenses {
+    width: 80%;
+    justify-content: start;
+}
+
+.job-detail {
+    width: 80%;
+}
+
+.pilot-list-title {
+    text-align: center;
+}
+
+.job-mana-btn {
+    display: flex;
+    margin-top: 20px;
+}
+
+.job-mana-btn a {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.job-mana-btn button {
+    font-size: 16px;
+    padding: 0 10px;
+}

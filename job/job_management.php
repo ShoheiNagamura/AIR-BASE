@@ -54,7 +54,7 @@ if ($status == false) {
 
 
 // 取得したデータ件数を用意
-$job_num = count($result);
+$count = count($result);
 
 
 // ヘッダー用
@@ -137,54 +137,36 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
 foreach ($result as $record) {
     $output .= "
         <div class='job-item'>
-            <div class='job-head'>
-                <div class='jobName'>
-                    <p class=''>{$record["job_name"]}</p>
-                </div>
-                <div class='job-headTime'>
-                    <div class='created_at'>
-                        <p class=''>掲載日：{$record["created_at"]}</p>
-                    </div>
-                    <div class='update_at'>
-                        <p class=''>最終更新日：{$record["update_at"]}</p>
-                    </div>
+            <div class='job-header'>
+                <p class='job-name'>{$record["job_name"]}</p>
+                <div class='job-date'>
+                    <p class='job-created_at'>{$record["created_at"]}</p>
+                    <p class='job-update_at'>{$record["update_at"]}</p>
                 </div>
             </div>
-            <div class='job_status'>
-                <p class=''>{$record["job_status"]}</p>
+            <p class='job-status'>{$record["job_status"]}</p>
+            <div class='job-box'>
+                <div class='place-reward'>
+                    <p class='job-place'>場所：{$record["place"]}</p>
+                    <p class='job-reward'>報酬：{$record["reward"]}</p>
+                    <p class='job-transportation_expenses'>交通費：{$record["transportation_expenses"]}</p>
+
+                </div>
+                <div class='word-date'>
+                    <p class='job-work-date'>期間：{$record["start_date"]} ~ {$record["end_date"]}</p>
+                    <p class='job-deadline'>締切日：{$record["deadline"]}</p>
+                </div>
             </div>
-            <div class='place'>
-                <p class=''>場所：{$record["place"]}</p>
+            <p class='job-detail'>案件詳細<br>{$record["detail"]}</p>
+            <div class='job-mana-btn'>
+                <a href=''><button>編集</button></a>
+                <a href=''><button>削除</button></a>
             </div>
-            <div class='schedule'>
-                <p class=''>日程：{$record["start_date"]} ~ {$record["end_date"]}</p>
-            </div>
-            <div class='reward'>
-                <p class=''>報酬：{$record["reward"]}円(税込)</p>
-            </div>
-            <div class='transportation_expenses'>
-                <p class=''>交通費：{$record["transportation_expenses"]}</p>
-            </div>
-            <div class='deadline'>
-                <p class=''>募集締切：{$record["deadline"]}</p>
-            </div>
-            <div class='detail'>
-                <p class=''>- 案件の内容 -<br>{$record["detail"]}</p>
-            </div>
-            <tr class='Btn-area'>
-                <td>
-                    <a class='editBtn' href='jobEdit.php?id={$record["id"]}'>編集</a>
-                </td>
-                <td>
-                    <a class='deleteBtn' href='jobDelete.php?id={$record["id"]}'>削除</a>
-                </td>
-            </tr>
         </div>
     ";
 }
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -201,11 +183,11 @@ foreach ($result as $record) {
 <body>
 
     <?= $headerOutput ?>
-
-    <h2>登録済みの案件一覧</h2>
-    <h3 class="job_num"><?= $job_num ?>件を登録済み</h3>
-    <div class="job-area">
+    <h2 class="pilot-list-title">登録済みの案件一覧</h2>
+    <div class="job-items">
+        <p class="count-job"><?= $count ?> 件の検索結果</p>
         <?= $output ?>
+    </div>
     </div>
 
 
