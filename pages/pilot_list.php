@@ -1,29 +1,24 @@
 <?php
-
 session_start();
 
 include('../functions/check_session_id.php');
 include('../functions/connect_to_db.php');
 
-if ($_SESSION['user_type'] == 0) {
-    general_check_session_id();
-} else {
-    header("Location:../login/loginTop.php");
-    exit();
-}
-
-$id = $_SESSION['id'];
-
 $email = $_SESSION['email'];
+// var_dump($email);
+// exit();
 
 
-// DB接続
+
+
+//関数定義ファイルからDB接続関数呼び出す
 $pdo = connect_to_db();
-// $sql = 'SELECT * FROM pailot_info WHERE user_id=:id';
-$sql = 'SELECT * FROM users INNER JOIN general_info ON users.id = general_info.user_id  where users.id=:id ;';
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
+$sql = 'SELECT * FROM users INNER JOIN pailot_info ON users.id = pailot_info.user_id INNER JOIN pailot_skill ON pailot_info.user_id = pailot_skill.user_id ;';
+$stmt = $pdo->prepare($sql);
+
+
+//SQL実行するがまだデータの取得はできていない
 try {
     $status = $stmt->execute();
 } catch (PDOException $e) {
@@ -31,17 +26,23 @@ try {
     exit();
 }
 
-$result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-// echo '<pre>';
-// var_dump($result);
-// echo '</pre>';
-// exit();
-
-$json_result = json_encode(($result));
+//fectchAllでデータの取得
+if ($status == false) {
+    $error = $stmt->errorInfo();
+    exit('sqlError:' . $error[2]);
+} else {
+    // PHPではデータを取得するところまで実施
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 
 // ヘッダー用
+$headerOutput = "";
+
+// メイン用
+$output = "";
+
+
 if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
     $headerOutput = "
         <header>
@@ -56,10 +57,10 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
         </header>
 
         <ul>
-            <a href=''>
+            <a href='./job_list.php'>
                 <li>案件検索</li>
             </a>
-            <a href=''>
+            <a href='./pilot_list.php'>
                 <li>パイロット検索</li>
             </a>
             <a href=''>
@@ -68,7 +69,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <a href=''>
                 <li>受注管理</li>
             </a>
-            <a href='profile.php'>
+            <a href='../profile/profile.php'>
                 <li>プロフィール</li>
             </a>
         </ul>";
@@ -86,10 +87,10 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
         </header>
 
         <ul>
-            <a href=''>
+            <a href='./job_list.php'>
                 <li>案件検索</li>
             </a>
-            <a href='../pages/pilot_list.php'>
+            <a href='./pilot_list.php'>
                 <li>パイロット検索</li>
             </a>
             <a href=''>
@@ -101,12 +102,28 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <a href='../job/jobInput.php'>
                 <li>案件登録</li>
             </a>
-            <a href='./general_profile.php'>
+            <a href='../profile/general_profile.php'>
                 <li>プロフィール</li>
             </a>
         </ul>
         ";
 }
+
+
+
+foreach ($result as $record) {
+    $output .= "
+        <div class='seller-items'>
+            <img src='{$record["my_image"]}' height='200px'>
+            <p class='seller-item seller-name'>{$record["kana"]}</p>
+            <p class='seller-item seller-name_kana'>{$record["name"]}</p>
+            <p class='seller-item seller-update_time'>{$record["age"]}</p>
+            <p class='seller-item seller-update_time'>{$record["word"]}</p>
+            <a href = './sellerDetail.php'><button>詳しく</button>
+        </div>
+    ";
+}
+
 
 ?>
 
@@ -122,21 +139,9 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
 </head>
 
 <body>
-
     <?= $headerOutput ?>
 
-
-    <p>一般ユーザープロフィール</p>
-
-    <p><?= $result['name'] ?></p>
-    <p><?= $result['nickname'] ?></p>
-    <p><?= $result['age'] ?></p>
-    <p><?= $result['gender'] ?></p>
-
-    <a href="../Update/general_userEdit.php">
-        <p>プロフィール更新</p>
-    </a>
-
+    <?= $output ?>
 </body>
 
 </html>
