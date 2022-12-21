@@ -11,7 +11,7 @@ $email = $_SESSION['email'];
 //関数定義ファイルからDB接続関数呼び出す
 $pdo = connect_to_db();
 
-$sql = 'SELECT * FROM job_project ';
+$sql = 'SELECT * FROM job_project order by update_at DESC ';
 $stmt = $pdo->prepare($sql);
 
 
@@ -36,6 +36,8 @@ if ($status == false) {
 // var_dump($result);
 // echo '</pre>';
 
+$count = count($result);
+
 
 
 // ヘッダー用
@@ -59,10 +61,10 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
         </header>
 
         <ul>
-            <a href=''>
+            <a href='./job_list.php'>
                 <li>案件検索</li>
             </a>
-            <a href=''>
+            <a href='./pilot_list.php'>
                 <li>パイロット検索</li>
             </a>
             <a href=''>
@@ -89,7 +91,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
         </header>
 
         <ul>
-            <a href=''>
+            <a href='../pages/job_list.php'>
                 <li>案件検索</li>
             </a>
             <a href='../pages/pilot_list.php'>
@@ -98,7 +100,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <a href=''>
                 <li>気になるパイロット</li>
             </a>
-            <a href=''>
+            <a href='../job/job_management.php'>
                 <li>案件管理</li>
             </a>
             <a href='../job/jobInput.php'>
@@ -115,35 +117,55 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
 if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
     foreach ($result as $record) {
         $output .= "
-            <div class='seller-items'>
-                <p class='seller-item seller-name'>{$record["job_name"]}</p>
-                <p class='seller-item seller-name'>{$record["job_status"]}</p>
-                <p class='seller-item seller-name'>{$record["reward"]}</p>
-                <p class='seller-item seller-name_kana'>{$record["place"]}</p>
-                <p class='seller-item seller-update_time'>{$record["start_date"]} ~ {$record["end_date"]}</p>
-                <p class='seller-item seller-update_time'>{$record["transportation_expenses"]}</p>
-                <p class='seller-item seller-update_time'>{$record["deadline"]}</p>
-                <p class='seller-item seller-update_time'>{$record["detail"]}</p>
-                <p class='seller-item seller-update_time'>{$record["created_at"]}</p>
-                <p class='seller-item seller-update_time'>{$record["update_at"]}</p>
+            <div class='job-item'>
+                <div class='job-header'>
+                    <p class='job-name'>{$record["job_name"]}</p>
+                    <div class='job-date'>
+                        <p class='job-created_at'>{$record["created_at"]}</p>
+                        <p class='job-update_at'>{$record["update_at"]}</p>
+                    </div>
+                </div>
+                <p class='job-status'>{$record["job_status"]}</p>
+                <div class='job-box'>
+                    <div class='place-reward'>
+                        <p class='job-place'>場所：{$record["place"]}</p>
+                        <p class='job-reward'>報酬：{$record["reward"]}</p>
+                        <p class='job-transportation_expenses'>交通費：{$record["transportation_expenses"]}</p>
+                    </div>
+                    <div class='word-date'>
+                        <p class='job-work-date'>期間：{$record["start_date"]} ~ {$record["end_date"]}</p>
+                        <p class='job-deadline'>締切日：{$record["deadline"]}</p>
+                    </div>
+                </div>
+                <p class='job-detail'>案件詳細<br>{$record["detail"]}</p>
             </div>
+            <a href = './sellerDetail.php'><button>応募</button>
         ";
     }
 } else if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 0) {
     foreach ($result as $record) {
         $output .= "
-            <div class='seller-items'>
-                <p class='seller-item seller-name'>{$record["job_name"]}</p>
-                <p class='seller-item seller-name'>{$record["job_status"]}</p>
-                <p class='seller-item seller-name'>{$record["reward"]}</p>
-                <p class='seller-item seller-name_kana'>{$record["place"]}</p>
-                <p class='seller-item seller-update_time'>{$record["start_date"]} ~ {$record["end_date"]}</p>
-                <p class='seller-item seller-update_time'>{$record["transportation_expenses"]}</p>
-                <p class='seller-item seller-update_time'>{$record["deadline"]}</p>
-                <p class='seller-item seller-update_time'>{$record["detail"]}</p>
-                <p class='seller-item seller-update_time'>{$record["created_at"]}</p>
-                <p class='seller-item seller-update_time'>{$record["update_at"]}</p>
-                <a href = './sellerDetail.php'><button>詳しく</button>
+            <div class='job-item'>
+                <div class='job-header'>
+                    <p class='job-name'>{$record["job_name"]}</p>
+                    <div class='job-date'>
+                        <p class='job-created_at'>掲載日：{$record["created_at"]}</p>
+                        <p class='job-update_at'>更新日：{$record["update_at"]}</p>
+                    </div>
+                </div>
+                <p class='job-status'>{$record["job_status"]}</p>
+                <div class='job-box'>
+                    <div class='place-reward'>
+                        <p class='job-place'>場所：{$record["place"]}</p>
+                        <p class='job-reward'>報酬：{$record["reward"]}</p>
+                        <p class='job-transportation_expenses'>交通費：{$record["transportation_expenses"]}</p>
+                    </div>
+                    <div class='word-date'>
+                        <p class='job-work-date'>期間：{$record["start_date"]} ~ {$record["end_date"]}</p>
+                        <p class='job-deadline'>締切日：{$record["deadline"]}</p>
+                    </div>
+                </div>
+                <p class='job-detail'>案件詳細<br>{$record["detail"]}</p>
             </div>
         ";
     }
@@ -165,8 +187,13 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
 
 <body>
     <?= $headerOutput ?>
-
-    <?= $output ?>
+    <main class="job-list">
+        <h2 class="pilot-list-title">お仕事一覧</h2>
+        <div class="job-items">
+            <p class="count-job"><?= $count ?> 件の検索結果</p>
+            <?= $output ?>
+        </div>
+    </main>
 </body>
 
 </html>

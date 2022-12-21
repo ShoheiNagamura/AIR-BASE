@@ -29,18 +29,18 @@
         </nav>
     </header>
 
-    <main>
-        <p><a href="../login/loginTop.php">戻る</a></p>
-
-        <h1>パイロットログイン</h1>
-        <p>パイロットに方はこちらからご登録ください</p>
-        <form action="./pilot_login_act.php" method="POST">
-            <label for="email">メールアドレス</label>
-            <input type="email" id="email" name="email" placeholder="メールアドレスを入力してください">
-            <label for="password">パスワード</label>
-            <input type="password" id="password" name="password" placeholder="パスワードを入力してください">
-            <button>ログイン</button>
+    <main class="Auth-area">
+        <h1 class='Auth-title'>パイロットログイン</h1>
+        <p class="Auth-title-detail">パイロットに方はこちらからご登録ください</p>
+        <form class="Auth-form" action="./pilot_login_act.php" method="POST">
+            <label class="Auth-label" for="email">メールアドレス</label>
+            <input class="Auth-input" type="email" id="email" name="email" placeholder="メールアドレスを入力してください">
+            <label class="Auth-label" for="password">パスワード</label>
+            <input class="Auth-input" type="password" id="password" name="password" placeholder="パスワードを入力してください">
+            <button class="Auth-btn">ログイン</button>
         </form>
+        <p><a class="auth-top-back" href="../login/loginTop.php">戻る</a></p>
+
     </main>
 
 </body>

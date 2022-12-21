@@ -96,7 +96,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <a href=''>
                 <li>気になるパイロット</li>
             </a>
-            <a href=''>
+            <a href='../job/job_management.php'>
                 <li>案件管理</li>
             </a>
             <a href='../job/jobInput.php'>
@@ -113,12 +113,11 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
 
 foreach ($result as $record) {
     $output .= "
-        <div class='seller-items'>
-            <img src='{$record["my_image"]}' height='200px'>
-            <p class='seller-item seller-name'>{$record["kana"]}</p>
-            <p class='seller-item seller-name_kana'>{$record["name"]}</p>
-            <p class='seller-item seller-update_time'>{$record["age"]}</p>
-            <p class='seller-item seller-update_time'>{$record["word"]}</p>
+        <div class='pilot-item'>
+            <img src='{$record["my_image"]}' height='300px'>
+            <p class='pilot-item-kana'>{$record["kana"]}</p>
+            <p class='pilot-item-name'>{$record["name"]}({$record["age"]})</p>
+            <p class='pilot-item-word'>{$record["word"]}</p>
             <a href = './sellerDetail.php'><button>詳しく</button>
         </div>
     ";
@@ -139,9 +138,14 @@ foreach ($result as $record) {
 </head>
 
 <body>
-    <?= $headerOutput ?>
 
-    <?= $output ?>
+    <?= $headerOutput ?>
+    <main class="pilot-list">
+        <h2 class="pilot-list-title">パイロット一覧</h2>
+        <div class="pilot-items">
+            <?= $output ?>
+        </div>
+    </main>
 </body>
 
 </html>

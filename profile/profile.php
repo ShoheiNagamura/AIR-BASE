@@ -50,7 +50,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
         </header>
 
         <ul>
-            <a href=''>
+            <a href='../pages/job_list.php'>
                 <li>案件検索</li>
             </a>
             <a href='../pages/pilot_list.php'>

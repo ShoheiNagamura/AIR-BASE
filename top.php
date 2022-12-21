@@ -62,7 +62,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <a href=''>
                 <li>気になるパイロット</li>
             </a>
-            <a href=''>
+            <a href='./job/job_management.php'>
                 <li>案件管理</li>
             </a>
             <a href='./job/jobInput.php'>
