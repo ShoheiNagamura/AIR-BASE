@@ -12,7 +12,7 @@ if ($_SESSION['user_type'] == 1) {
     exit();
 }
 
-$id = $_SESSION['id'];
+$id = $_GET['id'];
 $email = $_SESSION['email'];
 
 

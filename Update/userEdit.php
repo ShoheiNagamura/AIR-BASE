@@ -14,7 +14,9 @@ if ($_SESSION['user_type'] == 1) {
 
 $email = $_SESSION['email'];
 
-$id = $_SESSION['id'];
+$id = $_GET['id'];
+// var_dump($id);
+// exit();
 
 // DB接続
 $pdo = connect_to_db();
@@ -229,6 +231,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
+        <input type="hidden" name="id" value="<?= $id ?>">
         <button>更新</button>
     </form>
 
