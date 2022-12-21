@@ -10,8 +10,8 @@ include('../functions/check_session_id.php');
 
 
 
-$id = $_SESSION['id'];
-
+$id = $_POST['id'];
+// exit();
 
 if (
     !isset($_POST['name']) || $_POST['name'] == '' ||
@@ -91,10 +91,12 @@ $pdo = connect_to_db();
 // 下記が未完成ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 // SQL実行
-$sql = 'UPDATE pailot_info SET name=:name, kana=:kana , age=:age, gender=:gender, my_image=:my_image, work_area=:work_area, status=:status,  achievement=:achievement,word=:word, pr=:pr, update_time=now() WHERE id=:id';
+$sql = 'UPDATE pailot_info SET name=:name, kana=:kana , age=:age, gender=:gender, my_image=:my_image, work_area=:work_area, status=:status, word=:word,achievement=:achievement, pr=:pr, updated_at=now() WHERE user_id=:id';
 
 $stmt = $pdo->prepare($sql);
 
+
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->bindValue(':kana', $kana, PDO::PARAM_STR);
 $stmt->bindValue(':age', $age, PDO::PARAM_INT);
@@ -110,13 +112,14 @@ try {
     $status = $stmt->execute();
 } catch (PDOException $e) {
     echo json_encode(["sql error" => "{$e->getMessage()}"]);
-    exit();
+    exit("OK");
 }
 
 
-$sql = 'UPDATE pailot_skill SET license=:license, shooting=:shooting , agrochemical_spraying=:agrochemical_spraying, measurement=:measurement, outer_wall_survey=:outer_wall_survey, disaster=:disaster, race=:race, micro_drone=:micro_drone, water=:water, update_time=now() WHERE id=:id';
+$sql = 'UPDATE pailot_skill SET license=:license, shooting=:shooting , agrochemical_spraying=:agrochemical_spraying, measurement=:measurement, outer_wall_survey=:outer_wall_survey, disaster=:disaster, race=:race, micro_drone=:micro_drone, water=:water, updated_at=now() WHERE id=:id';
 
 $stmt = $pdo->prepare($sql);
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->bindValue(':license', $license, PDO::PARAM_STR);
 $stmt->bindValue(':shooting', $shooting, PDO::PARAM_INT);
 $stmt->bindValue(':agrochemical_spraying', $agrochemical_spraying, PDO::PARAM_INT);
@@ -136,5 +139,5 @@ try {
 
 
 
-header("Location:mypageOrder.php");
+header("Location:../profile/profile.php");
 exit();

@@ -32,6 +32,9 @@ try {
 
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
+// var_dump($result['user_id']);
+// exit();
+
 $json_result = json_encode(($result));
 
 
@@ -141,7 +144,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <div style="position:relative;width:400px;height:400px;">
                 <canvas id="myChart"></canvas>
             </div>
-            <a href="../Update/userEdit.php">
+            <a href="../Update/userEdit.php?id=<?= $result['user_id'] ?>">
                 <button class="pilot-profile-edit-btn">プロフィール更新</button>
             </a>
         </div>
