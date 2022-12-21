@@ -56,10 +56,10 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
         </header>
 
         <ul>
-            <a href=''>
+            <a href='../pages/job_list.php'>
                 <li>案件検索</li>
             </a>
-            <a href=''>
+            <a href='../pages/pilot_list.php'>
                 <li>パイロット検索</li>
             </a>
             <a href=''>
@@ -86,7 +86,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
         </header>
 
         <ul>
-            <a href=''>
+            <a href='../pages/job_list.php'>
                 <li>案件検索</li>
             </a>
             <a href='../pages/pilot_list.php'>
@@ -95,7 +95,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <a href=''>
                 <li>気になるパイロット</li>
             </a>
-            <a href=''>
+            <a href='../job/job_management.php'>
                 <li>案件管理</li>
             </a>
             <a href='../job/jobInput.php'>

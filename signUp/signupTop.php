@@ -29,36 +29,31 @@
         </nav>
     </header>
 
-    <main id="top-main">
-        <p><a href="../index.php">戻る</a></p>
-
+    <main id="top-Auth-main">
         <div id="login-area">
-            <div class="pilotAuth">
+            <div class="user-auth">
                 <h2>パイロット登録</h2>
                 <button id="top-sign-btn">
                     <a href="./pilotSignupInput.php">
                         <p>新規登録</p>
                     </a>
                 </button>
-                <!-- <button id="top-login-btn">
-                    <p>ログイン</p>
-                </button> -->
-                <p class="choiceGeneral-SignUp">パイロットの方はこちらから<br>パイロットとしてお仕事をお探しの方は<br>上記からご登録ください</p>
+                <p class="choice-SignUp">パイロットの方はこちらから<br>パイロットとしてお仕事をお探しの方は<br>上記からご登録ください</p>
             </div>
 
-            <div class="generalAuth">
+            <div class="user-auth">
                 <h2>一般の方登録</h2>
                 <button id="top-sign-btn">
                     <a href="./generalSignupInput.php">
                         <p>新規登録</p>
                     </a>
                 </button>
-                <!-- <button id="top-login-btn">
-                    <p>ログイン</p>
-                </button> -->
-                <p class="choicePilot-SignUp">一般の方はこちらから<br>案件一覧をご覧になりたい方、ご依頼を掲載したい方は<br>上記からご登録ください</p>
+
+                <p class="choice-SignUp">一般の方はこちらから<br>案件一覧をご覧になりたい方、ご依頼を掲載したい方は<br>上記からご登録ください</p>
             </div>
         </div>
+        <p class="auth-top-back"><a href="../index.php">戻る</a></p>
+
     </main>
 
 </body>

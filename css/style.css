@@ -376,3 +376,56 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+
+
+/* 認証トップ画面ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+#top-Auth-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
+}
+
+#login-area {
+    display: flex;
+    margin-top: 50px;
+}
+
+.user-auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px;
+}
+
+.user-auth h2 {
+    font-size: 32px;
+}
+
+#top-sign-btn {
+    border-color: #2C2F71;
+    background-color: #2C2F71;
+    color: #FFFFFF;
+    font-size: 24px;
+    padding: 6px 30px;
+    border-radius: 16px;
+    margin-top: 60px;
+}
+
+.choice-SignUp {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.auth-top-back {
+    margin-top: 100px;
+    background-color: #4E5155;
+    color: #FFFFFF;
+    font-size: 24px;
+    padding: 4px 30px;
+    border-radius: 10px;
+}

@@ -59,10 +59,10 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
         </header>
 
         <ul>
-            <a href=''>
+            <a href='./job_list.php'>
                 <li>案件検索</li>
             </a>
-            <a href=''>
+            <a href='./pilot_list.php'>
                 <li>パイロット検索</li>
             </a>
             <a href=''>
@@ -89,7 +89,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
         </header>
 
         <ul>
-            <a href=''>
+            <a href='../pages/job_list.php'>
                 <li>案件検索</li>
             </a>
             <a href='../pages/pilot_list.php'>
@@ -98,7 +98,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <a href=''>
                 <li>気になるパイロット</li>
             </a>
-            <a href=''>
+            <a href='../job/job_management.php'>
                 <li>案件管理</li>
             </a>
             <a href='../job/jobInput.php'>
@@ -126,6 +126,8 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
                 <p class='seller-item seller-update_time'>{$record["detail"]}</p>
                 <p class='seller-item seller-update_time'>{$record["created_at"]}</p>
                 <p class='seller-item seller-update_time'>{$record["update_at"]}</p>
+                <a href = './sellerDetail.php'><button>応募</button>
+
             </div>
         ";
     }
@@ -143,7 +145,6 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
                 <p class='seller-item seller-update_time'>{$record["detail"]}</p>
                 <p class='seller-item seller-update_time'>{$record["created_at"]}</p>
                 <p class='seller-item seller-update_time'>{$record["update_at"]}</p>
-                <a href = './sellerDetail.php'><button>詳しく</button>
             </div>
         ";
     }
