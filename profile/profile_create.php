@@ -15,12 +15,13 @@ if ($_SESSION['user_type'] == 1) {
 
 $id = $_SESSION['id'];
 
+
 if (
     !isset($_POST['name']) || $_POST['name'] == '' ||
     !isset($_POST['kana']) || $_POST['kana'] == '' ||
     !isset($_POST['age']) || $_POST['age'] == '' ||
     !isset($_POST['gender']) || $_POST['gender'] == '' ||
-    // !isset($_POST['my_image']) || $_POST['my_image'] == '' ||
+    !isset($_FILES['my_image']) || $_FILES['my_image'] == '' ||
     !isset($_POST['work_area']) || $_POST['work_area'] == '' ||
     !isset($_POST['status']) || $_POST['status'] == '' ||
     !isset($_POST['word']) || $_POST['word'] == '' ||
@@ -43,7 +44,7 @@ $name = $_POST['name'];
 $kana = $_POST['kana'];
 $age = $_POST['age'];
 $gender = $_POST['gender'];
-// $my_image = $_POST['my_image'];
+$my_image = $_FILES['my_image'];
 $work_area = $_POST['work_area'];
 $status = $_POST['status'];
 $word = $_POST['word'];
@@ -108,8 +109,8 @@ $stmt->bindValue(':gender', $gender, PDO::PARAM_STR);
 $stmt->bindValue(':my_image', $save_path, PDO::PARAM_STR);
 $stmt->bindValue(':work_area', $work_area, PDO::PARAM_STR);
 $stmt->bindValue(':status', $status, PDO::PARAM_STR);
-$stmt->bindValue(':achievement', $achievement, PDO::PARAM_STR);
 $stmt->bindValue(':word', $word, PDO::PARAM_STR);
+$stmt->bindValue(':achievement', $achievement, PDO::PARAM_STR);
 $stmt->bindValue(':pr', $pr, PDO::PARAM_STR);
 
 try {

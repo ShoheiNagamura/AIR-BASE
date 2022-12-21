@@ -13,10 +13,7 @@ if ($_SESSION['user_type'] == 1) {
 }
 
 $id = $_SESSION['id'];
-
 $email = $_SESSION['email'];
-
-
 
 
 // DB接続
@@ -34,10 +31,6 @@ try {
 }
 
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-// echo '<pre>';
-// var_dump($result);
-// echo '</pre>'
 
 $json_result = json_encode(($result));
 
@@ -133,7 +126,6 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
 
 
     <img src='<?= $result["my_image"] ?>' height='150px'>
-    <!-- <img src="../img/20221219000441740769e92850fbde464c165d112f9d6d.jpg" alt=""> -->
     <p><?= $result['kana'] ?></p>
     <p><?= $result['name'] ?></p>
     <p><?= $result['age'] ?></p>
