@@ -11,6 +11,7 @@ include('../functions/check_session_id.php');
 
 
 $id = $_POST['id'];
+// var_dump($id);
 // exit();
 
 if (
@@ -60,6 +61,9 @@ $disaster = $_POST['disaster'];
 $race = $_POST['race'];
 $micro_drone = $_POST['micro_drone'];
 $water = $_POST['water'];
+
+// var_dump($shooting);
+// exit();
 
 
 
@@ -116,7 +120,7 @@ try {
 }
 
 
-$sql = 'UPDATE pailot_skill SET license=:license, shooting=:shooting , agrochemical_spraying=:agrochemical_spraying, measurement=:measurement, outer_wall_survey=:outer_wall_survey, disaster=:disaster, race=:race, micro_drone=:micro_drone, water=:water, updated_at=now() WHERE id=:id';
+$sql = 'UPDATE pailot_skill SET license=:license, shooting=:shooting , agrochemical_spraying=:agrochemical_spraying, measurement=:measurement, outer_wall_survey=:outer_wall_survey, disaster=:disaster, race=:race, micro_drone=:micro_drone, water=:water, updated_at=now() WHERE user_id=:id';
 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
