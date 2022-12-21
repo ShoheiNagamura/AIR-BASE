@@ -121,8 +121,8 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
                 <div class='job-header'>
                     <p class='job-name'>{$record["job_name"]}</p>
                     <div class='job-date'>
-                        <p class='job-created_at'>{$record["created_at"]}</p>
-                        <p class='job-update_at'>{$record["update_at"]}</p>
+                        <p class='job-created_at'>掲載日：{$record["created_at"]}</p>
+                        <p class='job-update_at'>更新日：{$record["update_at"]}</p>
                     </div>
                 </div>
                 <p class='job-status'>{$record["job_status"]}</p>
@@ -138,8 +138,8 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
                     </div>
                 </div>
                 <p class='job-detail'>案件詳細<br>{$record["detail"]}</p>
+                <button>応募</button>
             </div>
-            <a href = './sellerDetail.php'><button>応募</button>
         ";
     }
 } else if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 0) {
