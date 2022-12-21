@@ -197,21 +197,9 @@
                     <p class="top-pilot-text">空撮が得意です</p>
                 </li>
                 <li class="top-pilot-item">
-                    <img class="top-pilot-image" src="./image/oni.png" alt="">
-                    <p class="top-pilot-kana">Onizuka Ryohei</p>
-                    <p class="top-pilot-name">鬼さん</p>
-                    <p class="top-pilot-text">空撮が得意です</p>
-                </li>
-                <li class="top-pilot-item">
                     <img class="top-pilot-image" src="./image/hunayama.png" alt="">
                     <p class="top-pilot-kana">Funayama Teppei</p>
                     <p class="top-pilot-name">船山 哲平</p>
-                    <p class="top-pilot-text">空撮が得意です</p>
-                </li>
-                <li class="top-pilot-item">
-                    <img class="top-pilot-image" src="./image/uekari.png" alt="">
-                    <p class="top-pilot-kana">Uekariya Haruka</p>
-                    <p class="top-pilot-name">上仮屋</p>
                     <p class="top-pilot-text">空撮が得意です</p>
                 </li>
                 <li class="top-pilot-item">
