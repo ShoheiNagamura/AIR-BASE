@@ -35,9 +35,9 @@ if ($status == false) {
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-echo '<pre>';
-var_dump($result["user_id"]);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($result["user_id"]);
+// echo '</pre>';
 
 
 // ヘッダー用

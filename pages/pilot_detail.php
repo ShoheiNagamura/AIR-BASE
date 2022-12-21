@@ -62,7 +62,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <a href=''>
                 <li>受注管理</li>
             </a>
-            <a href='profile.php'>
+            <a href='../profile/profile.php'>
                 <li>プロフィール</li>
             </a>
         </ul>";
@@ -95,7 +95,7 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 1) {
             <a href=''>
                 <li>案件登録</li>
             </a>
-            <a href='profile.php'>
+            <a href='../profile/profile.php'>
                 <li>プロフィール</li>
             </a>
         </ul>
