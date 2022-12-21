@@ -35,7 +35,7 @@
 
     <main>
         <section class="main-image">
-            <img src="./image/main.jpeg" alt="">
+            <img class="main-image-image" src="./image/top.webp" alt="">
         </section>
 
         <!-- 主な機能を表示。丸型で -->
